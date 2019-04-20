@@ -4,7 +4,7 @@ var RoomsView = {
   $select: $('#rooms select'),
 
   initialize: function() {
-debugger;
+
   App.fetch(function(dataObj){
       var array = [];
       for (var key in dataObj.results){
@@ -20,8 +20,12 @@ debugger;
   },
 
   renderRoom: function(room) {
-    var newRoom = RoomView.render(room)
-    $('#rooms select').append(newRoom);
+    if (room !== undefined){
+      var newRoom = {}
+      newRoom.room = room;
+      newRoom = Room.render(newRoom);
+      $('#rooms select').append(newRoom);
+    }
   }
 
 };

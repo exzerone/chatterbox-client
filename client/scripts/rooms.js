@@ -1,4 +1,4 @@
-var Roomview =        {
+var Room = {
   render: _.template(
-    `<option value="<%- roomname %>"><%- roomname %></option>`
+`<option value="<%- room %>"><%- room %></option>`
 )};
