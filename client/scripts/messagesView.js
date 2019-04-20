@@ -4,16 +4,19 @@ var MessagesView = {
   
   initialize: function() {
     // debugger;
-    var messages = Parse.readAll(function);
-    // Render all messages
-    for (var key in messages){
-      this.renderMessage(messages[key])
-    }
+    App.fetch(function(dataObj){
+      for (var key in dataObj.results){
+        MessagesView.renderMessage(dataObj.results[key])
+      }
+    });
+    
   },
 
   renderMessage: function(messageObj) {
-      var newMessage = MessageView.render(messageObj);
-      $('#chats').append(newMessage);
+      if (messageObj.username){
+        var newMessage = MessageView.render(messageObj);
+        $('#chats').append(newMessage);  
+      }
   }
 
 };
