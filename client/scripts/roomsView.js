@@ -28,4 +28,10 @@ var RoomsView = {
     }
   }
 
+  // Handle room selection
+    // Fetch all chats
+    // Filter chats based on selected room
+    // Empty current chats element
+    // Pass filtered list of chats into renderer
+
 };
