@@ -9,11 +9,12 @@ var MessagesView = {
         MessagesView.renderMessage(dataObj.results[key])
       }
     });
+   
     
   },
 
   renderMessage: function(messageObj) {
-      if (messageObj.username){
+      if (messageObj.username && messageObj.text){
         var newMessage = MessageView.render(messageObj);
         $('#chats').append(newMessage);  
       }

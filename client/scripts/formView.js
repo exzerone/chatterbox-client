@@ -7,7 +7,15 @@ var FormView = {
   },
 
   handleSubmit: function(event) {
+   
     // Stop the browser from submitting the form
+    var message = $('#message')[0].value;
+    var roomname = $('#rooms select')[0].value;
+
+    Parse.create(new Messages(App.username, message, roomname))
+   
+    $('#chats').empty();
+    MessagesView.initialize();
     event.preventDefault();
     
     console.log('click!');
