@@ -4,8 +4,7 @@ var RoomsView = {
   $select: $('#rooms select'),
 
   initialize: function() {
-
-  App.fetch(function(dataObj){
+    App.fetch(function(dataObj){
       var array = [];
       for (var key in dataObj.results){
         if (!array.includes(dataObj.results[key].roomname)) {
@@ -26,8 +25,8 @@ var RoomsView = {
       newRoom = Room.render(newRoom);
       $('#rooms select').append(newRoom);
     }
-  }
-
+  },
+  
   // Handle room selection
     // Fetch all chats
     // Filter chats based on selected room
